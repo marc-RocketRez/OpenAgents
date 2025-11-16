@@ -4,6 +4,20 @@ _Build Intelligent Workflow Systems with Context-Aware AI_
 
 ---
 
+## 📘 What Is This Blueprint?
+
+**This is a teaching document** that explains how the OpenCode agent system works and how to extend it for your needs.
+
+**You don't need to read this to use the system** - the agents work out of the box. Read this document only if you want to:
+- Understand the architecture behind the system
+- Create your own custom agents and commands
+- Extend the system with domain-specific patterns
+- Learn how context loading and agent coordination works
+
+**If you just want to start building**, skip this document and use `codebase-agent` instead. See the [README.md](../../README.md) for quick start instructions.
+
+---
+
 ## ⚡ TL;DR - Quick Reference
 
 **For New Users:**
