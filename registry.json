@@ -60,6 +60,27 @@
         ],
         "dependencies": [],
         "category": "extended"
+      },
+      {
+        "id": "system-builder",
+        "name": "System Builder",
+        "type": "agent",
+        "path": ".opencode/agent/system-builder.md",
+        "description": "Generates complete context-aware AI systems from user requirements",
+        "tags": [
+          "system-generation",
+          "architecture",
+          "orchestration",
+          "meta"
+        ],
+        "dependencies": [
+          "subagent:domain-analyzer",
+          "subagent:agent-generator",
+          "subagent:context-organizer",
+          "subagent:workflow-designer",
+          "subagent:command-creator"
+        ],
+        "category": "advanced"
       }
     ],
     "subagents": [
@@ -146,6 +167,76 @@
         ],
         "dependencies": [],
         "category": "extended"
+      },
+      {
+        "id": "domain-analyzer",
+        "name": "Domain Analyzer",
+        "type": "subagent",
+        "path": ".opencode/agent/subagents/domain-analyzer.md",
+        "description": "Analyzes user domains and recommends agent architectures",
+        "tags": [
+          "analysis",
+          "domain-modeling",
+          "architecture"
+        ],
+        "dependencies": [],
+        "category": "advanced"
+      },
+      {
+        "id": "agent-generator",
+        "name": "Agent Generator",
+        "type": "subagent",
+        "path": ".opencode/agent/subagents/agent-generator.md",
+        "description": "Generates XML-optimized agent files following research-backed patterns",
+        "tags": [
+          "generation",
+          "xml-optimization",
+          "agents"
+        ],
+        "dependencies": [],
+        "category": "advanced"
+      },
+      {
+        "id": "context-organizer",
+        "name": "Context Organizer",
+        "type": "subagent",
+        "path": ".opencode/agent/subagents/context-organizer.md",
+        "description": "Organizes and generates modular context files",
+        "tags": [
+          "context",
+          "organization",
+          "knowledge-management"
+        ],
+        "dependencies": [],
+        "category": "advanced"
+      },
+      {
+        "id": "workflow-designer",
+        "name": "Workflow Designer",
+        "type": "subagent",
+        "path": ".opencode/agent/subagents/workflow-designer.md",
+        "description": "Designs complete workflow definitions with context dependencies",
+        "tags": [
+          "workflows",
+          "design",
+          "orchestration"
+        ],
+        "dependencies": [],
+        "category": "advanced"
+      },
+      {
+        "id": "command-creator",
+        "name": "Command Creator",
+        "type": "subagent",
+        "path": ".opencode/agent/subagents/command-creator.md",
+        "description": "Creates custom slash commands with clear syntax and examples",
+        "tags": [
+          "commands",
+          "generation",
+          "cli"
+        ],
+        "dependencies": [],
+        "category": "advanced"
       }
     ],
     "commands": [
@@ -245,6 +336,23 @@
           "workflow"
         ],
         "dependencies": [],
+        "category": "advanced"
+      },
+      {
+        "id": "build-context-system",
+        "name": "Build Context System",
+        "type": "command",
+        "path": ".opencode/command/build-context-system.md",
+        "description": "Interactive system builder for creating complete context-aware AI architectures",
+        "tags": [
+          "system-generation",
+          "interactive",
+          "architecture",
+          "meta"
+        ],
+        "dependencies": [
+          "agent:system-builder"
+        ],
         "category": "advanced"
       }
     ],
@@ -455,18 +563,24 @@
     },
     "advanced": {
       "name": "Advanced",
-      "description": "Full installation plus experimental features and planning documentation",
+      "description": "Full installation plus system builder and experimental features",
       "components": [
         "agent:task-manager",
         "agent:codebase-agent",
         "agent:image-specialist",
         "agent:workflow-orchestrator",
+        "agent:system-builder",
         "subagent:reviewer",
         "subagent:tester",
         "subagent:documentation",
         "subagent:coder-agent",
         "subagent:build-agent",
         "subagent:codebase-pattern-analyst",
+        "subagent:domain-analyzer",
+        "subagent:agent-generator",
+        "subagent:context-organizer",
+        "subagent:workflow-designer",
+        "subagent:command-creator",
         "command:test",
         "command:commit",
         "command:context",
@@ -474,6 +588,7 @@
         "command:optimize",
         "command:prompt-enhancer",
         "command:worktrees",
+        "command:build-context-system",
         "tool:env",
         "tool:gemini",
         "context:essential-patterns",

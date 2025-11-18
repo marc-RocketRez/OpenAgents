@@ -34,10 +34,9 @@
 
 ## Quick Start
 
-### Step 1: Install OpenCode CLI
+### Step 1: Install OpenCode CLI (Follow official guide)
 ```bash
-
-https://opencode.ai/docs# Follow official guide
+https://opencode.ai/docs# 
 ```
 ### Step 2: Install Agents & Commands
 
