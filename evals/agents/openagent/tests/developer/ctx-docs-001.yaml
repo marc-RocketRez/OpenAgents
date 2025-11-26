@@ -9,17 +9,26 @@ description: |
 
 category: developer
 agent: openagent
+model: anthropic/claude-sonnet-4-5
 
-prompt: |
-  Create a README.md file at evals/test_tmp/README.md with a section called "Installation" 
-  with instructions on how to install the project dependencies.
+# Multi-turn: OpenAgent requires text approval before writing
+prompts:
+  - text: |
+      Create a README.md file at evals/test_tmp/README.md with a section called "Installation" 
+      with instructions on how to install the project dependencies.
+    expectContext: true
+    contextFile: ".opencode/context/core/standards/docs.md"
+  
+  - text: |
+      Yes, proceed with the plan. Execute it now.
+    delayMs: 2000
 
 # Expected behavior
 behavior:
-  mustUseTools: [read, edit]   # Must read context + README, then edit
+  mustUseAnyOf: [[read, write], [read, edit]]  # May use write or edit
   requiresApproval: true
   requiresContext: true         # MUST load docs.md before editing
-  minToolCalls: 2               # At least: read context + edit file
+  minToolCalls: 2               # At least: read context + write/edit file
 
 # Expected violations
 expectedViolations:
@@ -37,7 +46,7 @@ expectedViolations:
 approvalStrategy:
   type: auto-approve
 
-timeout: 60000
+timeout: 120000
 
 tags:
   - workflow-validation

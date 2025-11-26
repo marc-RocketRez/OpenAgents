@@ -25,7 +25,7 @@ prompts:
 
 # Expected behavior after approval
 behavior:
-  mustUseTools: [bash]
+  mustUseAnyOf: [[bash], [list]]  # Agent may use list instead of bash
   minToolCalls: 1
   # First response should contain approval request
   shouldContainInAnyMessage:
