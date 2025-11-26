@@ -30,7 +30,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: evals/framework
-        run: npm ci
+        run: npm install
       
       - name: Build framework
         working-directory: evals/framework
@@ -67,7 +67,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: evals/framework
-        run: npm ci
+        run: npm install
       
       - name: Build framework
         working-directory: evals/framework
