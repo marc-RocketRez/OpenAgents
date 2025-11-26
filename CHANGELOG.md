@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.1.0-alpha.1] - 2025-11-26
+## [0.1.0] - 2025-11-26
+
+### Changes
+- fix(ci): add contents:write permission for auto version bump
+
+The GITHUB_TOKEN needs explicit write permission to push commits
+and tags back to the repository.
+
 
 ### Added
 
