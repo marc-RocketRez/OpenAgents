@@ -23,8 +23,9 @@ export class ServerManager {
   constructor(private config: ServerConfig = {}) {
     this.port = config.port || 0; // 0 = random port
     this.hostname = config.hostname || '127.0.0.1';
-    // Always use manual spawn for now (SDK integration needs more work)
-    this.useSDK = false;
+    // Use SDK when agent is specified (better for CI/CD)
+    // Falls back to manual spawn when no agent specified
+    this.useSDK = !!config.agent;
   }
 
   /**

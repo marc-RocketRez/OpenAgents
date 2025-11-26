@@ -28,16 +28,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'evals/framework/package-lock.json'
       
-      - name: Install OpenCode CLI
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/OpenAgentsInc/opencode/main/install.sh | bash
-          echo "$HOME/.opencode/bin" >> $GITHUB_PATH
-      
-      - name: Verify OpenCode installation
-        run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
-          opencode --version
-      
       - name: Install dependencies
         working-directory: evals/framework
         run: npm install
@@ -47,9 +37,7 @@ jobs:
         run: npm run build
       
       - name: Run OpenAgent smoke test
-        run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
-          npm run test:ci:openagent
+        run: npm run test:ci:openagent
         env:
           CI: true
       
@@ -77,16 +65,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'evals/framework/package-lock.json'
       
-      - name: Install OpenCode CLI
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/OpenAgentsInc/opencode/main/install.sh | bash
-          echo "$HOME/.opencode/bin" >> $GITHUB_PATH
-      
-      - name: Verify OpenCode installation
-        run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
-          opencode --version
-      
       - name: Install dependencies
         working-directory: evals/framework
         run: npm install
@@ -96,9 +74,7 @@ jobs:
         run: npm run build
       
       - name: Run OpenCoder smoke test
-        run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
-          npm run test:ci:opencoder
+        run: npm run test:ci:opencoder
         env:
           CI: true
       
@@ -248,4 +224,3 @@ jobs:
           git push origin main --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-# Test comment
